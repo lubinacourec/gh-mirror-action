@@ -7,6 +7,9 @@ inputs:
   origin:
     description: 'URL of remote git repository'
     required: true
+  mirror:
+    description: "github repo containing the mirror in format user/repo"
+    required: true
   GITHUB_TOKEN:
     description: 'set this to the value of secrets.GITHUB_TOKEN'
     required: true
@@ -15,5 +18,6 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.origin }}
+    - ${{ inputs.mirror }}
   env:
     GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
