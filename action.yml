@@ -11,7 +11,7 @@ inputs:
     description: "github repo containing the mirror in format user/repo"
     required: true
   GITHUB_TOKEN:
-    description: 'set this to the value of secrets.GITHUB_TOKEN'
+    description: 'set this to the value of a secret containing a token with read/write permissions for the mirror repo'
     required: true
 runs:
   using: 'docker'
